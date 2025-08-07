@@ -1,87 +1,96 @@
-# 🖥️ Server Stats Script
+# 🖥️ Server Health Monitoring Script
 
-A simple and effective bash script to display key server statistics including CPU usage, memory usage, disk usage, uptime, top processes, network information, OS version, failed login attempts, and more.
-
----
-
-## 📂 Files
-
-- `server-stats.sh`: The main executable script.
+A lightweight, dependency-free Bash script for real-time monitoring of a Linux server’s health and security. It’s perfect for DevOps, sysadmins, and developers managing virtual machines or cloud servers.
 
 ---
 
-## 🛠️ Features
+## ✅ Features
 
-- CPU usage report
-- Memory and Disk utilization
-- Uptime and Load average
-- Top 5 CPU & Memory consuming processes
-- IP and Hostname information
-- OS version and kernel details
-- Last reboot time
-- Failed login attempts (for SSH)
-- Currently logged-in users
+- CPU Usage Monitor  
+- Memory Usage Display  
+- Disk Space Overview  
+- Top 5 CPU & Memory Consuming Processes  
+- OS Version Detection (Debian & RHEL based)  
+- System Uptime & Load Average  
+- Logged-in Users Count  
+- Failed Login Attempt Summary  
 
 ---
 
-## 🚀 Usage
+## 🚀 How to Use
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/AnweshaPanigrahi/Server_stats_bashScript
-cd server-stats
-
-**### Make script executable**
+### 1. Clone the Repository
 
 ```bash
-chmod +x server-stats.sh
+git clone https://github.com/your-username/server-health-monitor.git
+cd server-health-monitor
+```
 
-**###Run Script**
-
-```bash
-./server-stats.sh
-
-
-### Sample output
+### 2. Make the Script Executable
 
 ```bash
-===== SERVER STATS =====
+chmod +x server_status.sh
+```
 
-Hostname      : ip-172-31-34-12
-IP Address    : 172.31.34.12
+### 3. Run the Script
 
-CPU Usage     : 12.5%
-Memory Usage  : Used: 800MB / Total: 2000MB (40.00% used)
-Disk Usage    : /dev/xvda1 - Used: 6G / Total: 20G (30%)
+```bash
+./server_status.sh
+```
 
-Uptime        : 3 days, 6 hours, 22 minutes
-Load Average  : 0.30, 0.42, 0.50
+---
 
-Top 5 CPU Consuming Processes:
-PID    USER     CPU%   COMMAND
-2314   root     25.0   python3
-1984   ubuntu   15.2   java
-1231   root     10.4   nginx
-3214   mysql     9.2   mysqld
-2234   ubuntu    6.7   node
+## 🧾 Sample Output
 
-Top 5 Memory Consuming Processes:
-PID    USER     MEM%   COMMAND
-1984   ubuntu   35.2   java
-3214   mysql    28.7   mysqld
-2314   root     20.0   python3
-1231   root     14.6   nginx
-2234   ubuntu    9.4   node
+```text
+----- CPU Usage -----
+CPU Usage: 9.1%
 
-OS Version    : Ubuntu 22.04.1 LTS
-Kernel        : Linux 5.15.0-1069-aws
+----- Memory Usage -----
+Used: 344MB / Total: 914MB (37.6368% used)
 
-Last Reboot   : Thu Aug  1 14:53
+----- Disk Usage -----
+Used: 1.8G / Total: 6.8G (26% used)
 
-Failed Login Attempts:
-Aug 06 06:13:41 sshd[18156]: Failed password for invalid user admin from 92.118.39.165 port 48416 ssh2
-Aug 06 06:13:42 sshd[18158]: Failed password for invalid user admin from 92.118.39.165 port 48416 ssh2
+----- Top 5 CPU Consuming Processes -----
+    PID    PPID CMD                         %MEM %CPU
+   1411    1353 sshd: ubuntu@pts/1           0.7  0.0
+      1       0 /sbin/init                   1.4  0.0
+    617       1 /usr/lib/snapd/snapd         3.8  0.0
+    987       1 /snap/amazon-ssm-agent/1132  2.0  0.0
+    125       1 /usr/lib/systemd/systemd-jo  1.4  0.0
 
-Currently Logged-In Users:
-ubuntu    pts/0        2025-08-06 06:00 (13.233.15.148)
+----- Top 5 Memory Consuming Processes -----
+    PID    PPID CMD                         %MEM %CPU
+    617       1 /usr/lib/snapd/snapd         3.8  0.0
+    186       1 /sbin/multipathd -d -s       2.8  0.0
+    761       1 /usr/bin/python3 /usr/share  2.4  0.0
+    610       1 /usr/bin/python3 /usr/bin/n  2.1  0.0
+    987       1 /snap/amazon-ssm-agent/1132  2.0  0.0
+
+----- OS Version -----
+OS: Ubuntu 24.04.2 LTS (Noble Numbat)
+
+----- System Uptime & Load Average -----
+ 09:34:20 up 32 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+----- Logged-in Users -----
+Number of Logged-in Users: 1
+
+----- Failed Login Attempts -----
+Failed login attempts: 0
+```
+
+---
+
+## 📋 Notes
+
+- Designed for Ubuntu/Debian servers (can be adapted for RHEL/CentOS).
+- Requires no third-party dependencies.
+- Script reads logs from `/var/log/auth.log`.
+
+---
+
+## 📄 License
+
+MIT License © 2025 [Your Name]
