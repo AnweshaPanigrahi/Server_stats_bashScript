@@ -1,51 +1,33 @@
-# Server_stats_bashScript
-Linux Server Health Monitoring Script
-This repository contains a Bash script that monitors essential metrics of a Linux server, such as CPU usage, memory status, disk space, top processes, OS details, and failed login attempts. The script provides a quick overview of the system's health for sysadmins or developers managing remote machines.
+# 🖥️ Server Stats Script
 
-🔧 Features
-✅ CPU usage monitoring
+A simple and effective bash script to display key server statistics including CPU usage, memory usage, disk usage, uptime, top processes, network information, OS version, failed login attempts, and more.
 
-✅ Memory usage reporting
+---
 
-✅ Disk space status
+## 📂 Files
 
-✅ Top 5 memory-consuming processes
+- `server-stats.sh`: The main executable script.
 
-✅ OS name and version details
+---
 
-✅ Failed login attempts by users
+## 🛠️ Features
 
-✅ Timestamped health report
+- CPU usage report
+- Memory and Disk utilization
+- Uptime and Load average
+- Top 5 CPU & Memory consuming processes
+- IP and Hostname information
+- OS version and kernel details
+- Last reboot time
+- Failed login attempts (for SSH)
+- Currently logged-in users
 
-📁 Files Included
-server_health.sh — Main script file
+---
 
-README.md — Project documentation
+## 🚀 Usage
 
-**#Output Example**
-Server Health Report - Host: ip-172-31-34-12
+### 1. Clone the repository
 
-CPU Usage:
-CPU Usage: 8.3%
-
-Memory Usage:
-Used: $536 MB / Total: $983 MB (54.51% used)
-
-Disk Usage:
-/dev/root 30G 17G 14G 56% /
-
-Top 5 Memory Consuming Processes:
-COMMAND         PID     USER    %MEM
-python3         1342    root    6.8
-nginx           984     www-data 2.3
-mysqld          1123    mysql   1.9
-node            1567    ubuntu  1.5
-java            1672    tomcat  1.2
-
-OS Version:
-Ubuntu 20.04.6 LTS
-
-Failed Login Attempts:
-Failed login attempts: 3
-
-Report generated on: 2025-08-07 14:03:23
+```bash
+git clone https://github.com/AnweshaPanigrahi/Server_stats_bashScript
+cd server-stats
