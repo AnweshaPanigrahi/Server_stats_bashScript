@@ -22,14 +22,15 @@ A lightweight, dependency-free Bash script for real-time monitoring of a Linux s
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/server-health-monitor.git
-cd server-health-monitor
+# 1. Clone the repo
+git clone https://github.com/AnweshaPanigrahi/Server_stats_bashScript.git
+cd Server_stats_bashScript
 ```
 
 ### 2. Make the Script Executable
 
 ```bash
-chmod +x server_status.sh
+chmod +x Server-stats.sh
 ```
 
 ### 3. Run the Script
